@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.2
+env:
+- DB=postgresql
+script:
+- bundle exec rspec
+before_script:
+- rails db:create RAILS_ENV=test
+- rails db:migrate
+bundler_args: "--binstubs=./bundler_stubs"
+deploy:
+  provider: heroku
+  app: dive-books-camp
+  api_key:
+    secure: S1tAUqicks21Egjn+qSCCytYF7iF74fxT2beM7wavUNNbloPlo3j57JnoTahceTj+TUV5vxoFonBYTlKRqwJAvGIVoEVhlxtNj9SVkAcIKZyWAz5c0tYF8if+M40L8bTV1COpgm0MDhYDR+l3RHJ81CyS83ANQMrpM/+q9PiUxXjQMutRYv+S9KlqsIPNMj7+TfDcFXxogt5lTgg7BfFRvC9eascDyoa6YPul35d5Sv0+IcoDDcWKztlGEzOH/Mhz99ictyhhdkKt7Z59oBOEtP8/+tQ+Wjv79If/IyXN+1EeiAK2/tfOT37quMtGYufOH27OtQK+S0NFMBt0y6NTX60tO9S2masE87oCw/5ZC4tDQUZchcm0VAw9lCDWUkl3I8V8SS4Fokm4gVIz/vHKhyl7mxCxM8cDirXsfksyF+SoTy3UhRieJ4iDIVoPY/fJ7xLNEzZF8JWMEVl9RzzRKIdEEK76ccg8hCAMEn4oMJDYEjUGPJfTSAl1q4HJiDvPNrlc78rzQT4gcJgKPxUod7s115rLteEuaNIDcjZGEgg/Q2lsKXOFN0TQe7UNmzNKBVUZxRkAyXvmlnF4cNo1OV/ofo4wQb59uFExUKT3k4DE/34IAQRTDakDJUaWbgBuWxC7mdYbdQjGmAVux5cdmbKDQJQyPy8Kg64gYIEe/0=
