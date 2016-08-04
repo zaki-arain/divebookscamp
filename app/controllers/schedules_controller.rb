@@ -25,19 +25,26 @@ skip_before_action :verify_authenticity_token, :only => [:new]
       @drafters << Drafter.create(user_id: user.id, schedule_id: @schedule.id)
     end
 
+
+    redirect_to new_draft_path(@schedule)
+  end
+
+  def edit
+
+  end
+
+  def draft
+    @schedule = Schedule.find(params[:schedule_id])
     if @schedule.drafters[0].user_id == current_user.id
       p "current drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
-    render 'schedules/new'
+      render 'schedules/_links_show'
 
     else
       p "NONOTNOTNOTNOTTNOcurrent drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
 
-    render 'schedules/new'
+      render 'schedules/_no_links_show'
     end
   end
-
-  # def post
-
 
 
 end
