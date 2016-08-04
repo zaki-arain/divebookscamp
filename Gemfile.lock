@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.0)
       actionpack (= 5.0.0)
@@ -40,7 +41,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.1)
+    autoprefixer-rails (6.4.0)
+      execjs
     bcrypt (3.1.11)
+    bootstrap (4.0.0.alpha3.1)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -104,6 +110,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0)
       sprockets-rails (>= 2.0.0)
+    rails-assets-tether (1.3.3)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -177,6 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap (~> 4.0.0.alpha3)
   byebug
   capybara
   faker (~> 1.6.5)
@@ -186,6 +194,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rails-assets-tether (>= 1.1.0)!
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring
