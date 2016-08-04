@@ -3,10 +3,15 @@
   <head>
     <title>DiveBooksCamp Scheduler</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag    'application', media: 'all'%>
   </head>
   <nav>
-    <%= link_to_if(session[:user_id], "Logout", destroy_session_path) do end %>
+    <ul>
+      <li><%= link_to_if(current_user, "Logout", destroy_session_path) do
+        link_to("Register", new_user_path)
+      end %></li>
+      <li> <%= link_to_if(current_user, "Profile", current_user) do end%></li>
+    </ul>
   </nav>
   <body>
     <%= notice %>

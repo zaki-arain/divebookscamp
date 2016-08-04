@@ -1,22 +1,33 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
 
   def new
-    #registration form
+    @user = User.new
   end
 
   def create
-    #post route for creating user
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to @user
+      session[:user_id] = @user.id
+    else
+      render 'new'
+    end
   end
 
   def destroy
-    #delete user
+    @user = User.find([params:id])
+    @post.destroy
+
+    #WHERE SHOULD THIS REDIRECT TO?
+    redirect_to root_path
   end
 
   private
   def user_params
-    params.require(:game).permit(:user_throw)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 end

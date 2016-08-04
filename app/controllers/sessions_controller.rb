@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: session_params[:username]).try(:authenticate, session_params[:password])
+    user = User.find_by(email: session_params[:email]).try(:authenticate, session_params[:password])
     if user
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash.now[:notice] = "Invalid username/password. Please try again."
+      flash.now[:notice] = "Invalid email/password. Please try again."
       render 'new'
     end
   end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 private
 
   def session_params
-    params.require(:session).permit(:username, :password)
+    params.require(:session).permit(:email, :password)
   end
 
 
