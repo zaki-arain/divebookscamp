@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :drafters
   has_secure_password
 
+	validates :email, format: { with: /\b+@divebookscamp\.com\z/,
+                  message: "must be a valid Dive Books Camp account" }
+	validates_uniqueness_of :email
 end
