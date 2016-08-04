@@ -1,0 +1,3 @@
+class Drafter < ApplicationRecord
+
+end
