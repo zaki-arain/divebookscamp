@@ -13,11 +13,22 @@ skip_before_action :verify_authenticity_token, :only => [:new]
   end
 
   def new
+    @schedule = Schedule.create(start_date: params[:start_date])
     @users = []
     params[:users].each do |value|
       @users << User.find(value.to_i)
     end
+    @users.shuffle!
+    @snaked_users = @users + @users.reverse
+    @drafters = []
+    @snaked_users.each do |user|
+      @drafters << Drafter.create(user_id: user.id, schedule_id: @schedule.id)
+    end
+
+    render 'schedules/new'
   end
+
+  # def post
 
 
 
