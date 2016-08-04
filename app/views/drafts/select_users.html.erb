@@ -1,4 +1,15 @@
 <form action = '/schedules/create_draft' method="post">
+<!-- <select id="start_date_year" name="start_date[year]">
+  <option value="1">Lisbon</option>
+  <option value="2">Madrid</option>
+  <option value="12">Berlin</option>
+</select> -->
+<!-- <select id="start_date_month" name="start_date[month]">Month </select>
+<select id="start_date_day" name="start_date[day]"> ... </select></br> -->
+
+  Start Date:
+  <input type="date" name="start_date"></br>
+
 <% @draftlist.each do |user| %>
   <input type="checkbox" name="users[<%= user.id %>]" value="<%= user.id %>"><%= user.first_name %><br>
 <% end %>
