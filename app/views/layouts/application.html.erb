@@ -3,10 +3,19 @@
   <head>
     <title>DiveBooksCamp Scheduler</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag "application" %>
   </head>
-
+  <nav>
+    <ul>
+      <li><%= link_to_unless(current_user, "Register", new_user_path)  do
+        link_to('Logout', destroy_session_path, method: :delete)
+      end %></li>
+      <li> <%= link_to_if(current_user, "Profile", current_user) do end%></li>
+    </ul>
+  </nav>
   <body>
+    <%= notice %>
     <%= yield %>
   </body>
 </html>

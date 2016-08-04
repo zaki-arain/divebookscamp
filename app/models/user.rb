@@ -3,4 +3,7 @@ class User < ApplicationRecord
 	has_many :schedules, through: :selections
 	has_many :tasks, through: :selections
 	has_many :groups, through: :tasks
+
+  has_secure_password
+
 end
