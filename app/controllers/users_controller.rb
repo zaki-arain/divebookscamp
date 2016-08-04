@@ -3,6 +3,10 @@ before_filter :require_login, :except => [:new, :create]
 
   def show
     @user = User.find(params[:id])
+    @schedule = Schedule.last
+    @week1 = Day.all.limit(5)
+    @week2 = Day.all.limit(5).offset(5)
+    @week3 = Day.all.limit(5).offset(10)
   end
 
   def new

@@ -1,5 +1,35 @@
 <h2 class="section-title"><%= @user.first_name %> <%= @user.last_name%> </h2>
 
-<div id="current-session-user-schedule"> small table will go here</div>
+<div id="current-session-user-schedule">
 
-<div id="user_"
+  <div id="week-1-user-schedule">
+    <table id="week-1">Week 1
+      <tr>
+      <% @week1.each do |day| %>
+          <th><%= day.name %></th>
+      <% end  %>
+    </tr>
+    <tr>
+      <% @user. %>
+    </tr>
+    </table>
+</div>
+
+<div id="week-1-user-schedule" >
+  <table id="week-2">Week 2
+    <% @week2.each do |day| %>
+      <th><%= day.name %></th>
+    <% end  %>
+  </table>
+</div>
+<div id="week-1-user-schedule">
+  <table id="week-3">Week 3
+    <% @week3.each do |day| %>
+      <th><%= day.name %></th>
+    <% end  %>
+  </table>
+</div>
+
+<div id="user-percentages-list">
+  USER %%%
+</div>
