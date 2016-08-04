@@ -1,5 +1,5 @@
 <ul>
-  <% @users.each do |user| %>
-    <li><%= user.first_name %></li>
+  <% @drafters.each do |drafter| %>
+    <li><%= drafter.user.first_name %></li>
   <% end %>
 </ul>

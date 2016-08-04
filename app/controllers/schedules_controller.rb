@@ -19,7 +19,12 @@ skip_before_action :verify_authenticity_token, :only => [:new]
       @users << User.find(value.to_i)
     end
     @users.shuffle!
-    @users2 = @users + @users.reverse
+    @snaked_users = @users + @users.reverse
+    @drafters = []
+    @snaked_users.each do |user|
+      @drafters << Drafter.create(user_id: user.id, schedule_id: @schedule.id)
+    end
+
     render 'schedules/new'
   end
 
