@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :schedules
   root 'schedules#show'
 
+  get '/schedules/create_draft/new' => 'schedules#select_users', as: 'select_draft'
+  post '/schedules/create_draft' => 'schedules#new', as: 'draft_lobby_path'
   get '/sessions/new' => 'sessions#new', as: 'new_session'
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: 'destroy_session'

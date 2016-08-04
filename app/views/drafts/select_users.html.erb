@@ -1,0 +1,6 @@
+<form action = '/schedules/create_draft' method="post">
+<% @draftlist.each do |user| %>
+  <input type="checkbox" name="users[<%= user.id %>]" value="<%= user.id %>"><%= user.first_name %><br>
+<% end %>
+  <input type="submit" value="Submit">
+</form>
