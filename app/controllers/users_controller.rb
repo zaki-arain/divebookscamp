@@ -22,7 +22,7 @@ before_filter :require_login, :except => [:new, :create]
 
   def destroy
     @user = User.find([params:id])
-    @post.destroy
+    @user.destroy
 
     #WHERE SHOULD THIS REDIRECT TO?
     redirect_to root_path
