@@ -25,7 +25,15 @@ skip_before_action :verify_authenticity_token, :only => [:new]
       @drafters << Drafter.create(user_id: user.id, schedule_id: @schedule.id)
     end
 
+    if @schedule.drafters[0].user_id == current_user.id
+      p "current drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
     render 'schedules/new'
+
+    else
+      p "NONOTNOTNOTNOTTNOcurrent drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
+
+    render 'schedules/new'
+    end
   end
 
   # def post
