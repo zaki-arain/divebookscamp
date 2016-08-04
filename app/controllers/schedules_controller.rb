@@ -13,15 +13,10 @@ skip_before_action :verify_authenticity_token, :only => [:new]
   end
 
   def new
-    p params.inspect
     @users = []
     params[:users].each do |value|
-      p "---"
-      p "#{value}"
       @users << User.find(value.to_i)
     end
-    p "-------------users----------"
-      p @users
   end
 
 
