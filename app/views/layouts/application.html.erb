@@ -5,8 +5,11 @@
     <%= csrf_meta_tags %>
 
   </head>
-
+  <nav>
+    <%= link_to_if(session[:user_id], "Logout", destroy_session_path) do end %>
+  </nav>
   <body>
+    <%= notice %>
     <%= yield %>
   </body>
 </html>
