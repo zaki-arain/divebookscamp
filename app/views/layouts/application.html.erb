@@ -6,20 +6,23 @@
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag "application" %>
   </head>
-  <nav>
-    <ul>
-      <li><%= link_to_unless(current_user, "Register", new_user_path)  do
-        link_to('Logout', destroy_session_path, method: :delete)
-      end %></li>
-      <li> <%= link_to_if(current_user, "Profile", current_user) do
-       end%></li>
-       <li> <%= link_to_if(current_user, "Create Draft", select_draft_path) do end%></li>
-    </ul>
-    </ul>
-  </nav>
+  <header>
+    <h1 id="main-title"> Dive Books Camp </h1>
+    <nav>
+      <ul>
+        <li><%= link_to_unless(current_user, "Register", new_user_path)  do
+          link_to('Logout', destroy_session_path, method: :delete)
+        end %></li>
+        <li> <%= link_to_if(current_user, "Profile", current_user) do
+         end%></li>
+         <li> <%= link_to_if(current_user, "Create Draft", select_draft_path) do end%></li>
+      </ul>
+    </nav>
+</header>
   <body>
-
-    <%= notice %>
-    <%= yield %>
+    <main class="container">
+      <%= notice %>
+      <%= yield %>
+    </main>
   </body>
 </html>

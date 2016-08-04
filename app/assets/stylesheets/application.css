@@ -14,11 +14,45 @@
  *= require_self
  */
 
-body {
-  background-color: cyan;
+nav li {
+  list-style: none;
+  display: inline-block;
 }
 
+nav {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding-right: 15px;
+}
 
-ul {
-  list-style: none;
+#main-title {
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Helvetica';
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #2c185d;
+  /*text-shadow: 5px 5px 0px #eee, 7px 7px 0px #707070;*/
+}
+
+.section-title {
+  text-align: center;
+  font-size: 35px;
+}
+
+#current-session-user-schedule {
+  border: 1px black dashed;
+}
+
+body {
+  background-color: #7afeda;
+  font-family: 'Helvetica';
+}
+
+.container {
+  border: 1px solid black;
+  margin: 20px auto;
+  width: 850px;
+  padding: 0px 20px 20px 20px;
 }
