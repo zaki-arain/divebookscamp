@@ -179,6 +179,9 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yaml_db (0.4.0)
+      rails (>= 3.0, < 5.1)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
@@ -204,6 +207,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
+  yaml_db
 
 RUBY VERSION
    ruby 2.3.1p112
