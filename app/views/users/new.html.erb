@@ -1,6 +1,6 @@
 <h1>Create User</h1>
 
-<%= form_for @user do |f| %>
+<%= bootstrap_form_for(@user, inline_errors: true, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
   <% if @user.errors.any? %>
     <div id="errors">
       <h2><%= pluralize(@user.errors.count, "error") %> prevented this user from saving</h2>
@@ -11,27 +11,11 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </p>
-
-  <p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </p>
-
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= f.text_field :first_name %><br>
+  <%= f.text_field :last_name %><br>
+  <%= f.email_field :email %><br>
+  <%= f.password_field :password %><br>
+  <%= f.form_group do %>
+    <%= f.submit "Create Account", class: "btn btn-info"%>
+  <% end %>
 <% end %>
