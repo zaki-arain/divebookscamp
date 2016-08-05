@@ -30,18 +30,26 @@ skip_before_action :verify_authenticity_token, :only => [:new]
 
   def edit
     @schedule = Schedule.find(params[:schedule_id])
-    @selection = Selection.create!(user_id: session[:user_id], schedule_id: @schedule.id, task_id: params[:id_to_update])
+    @selection = Selection.new(user_id: session[:user_id], schedule_id: @schedule.id, task_id: params[:id_to_update])
     current_drafter = @schedule.drafters.order(:id).first
 
     if request.xhr?
-      Drafter.create(user_id: session[:user_id], schedule_id: @schedule.id)
-      current_drafter.destroy
-      @schedule = Schedule.find(params[:schedule_id])
-      current_drafter = @schedule.drafters.order(:id).first
-      if current_drafter.user_id == current_user.id
-        render 'schedules/_links_show', layout: false, locals: {schedule: @schedule}
+      if @selection.save
+        Drafter.create(user_id: session[:user_id], schedule_id: @schedule.id)
+        current_drafter.destroy
+        @schedule = Schedule.find(params[:schedule_id])
+        current_drafter = @schedule.drafters.order(:id).first
+        if current_drafter.user_id == current_user.id
+          render 'schedules/_links_show', layout: false, locals: {schedule: @schedule}
+        else
+          render 'schedules/_no_links_show', layout: false, locals: {schedule: @schedule}
+        end
       else
-        render 'schedules/_no_links_show', layout: false, locals: {schedule: @schedule}
+        if current_drafter.user_id == current_user.id
+          render  '/schedules/_links_show', layout: false, locals: { schedule: @schedule }
+        else
+          render 'schedules/_no_links_show', layout: false, locals: {schedule: @schedule}
+        end
       end
     else
       "booo"
