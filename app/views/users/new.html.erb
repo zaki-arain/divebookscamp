@@ -1,21 +1,23 @@
 <h1>Create User</h1>
 
-<%= bootstrap_form_for(@user, inline_errors: true, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
-  <% if @user.errors.any? %>
-    <div id="errors">
-      <h2><%= pluralize(@user.errors.count, "error") %> prevented this user from saving</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="register-form">
+  <%= bootstrap_form_for(@user, inline_errors: true, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <% if @user.errors.any? %>
+      <div id="errors">
+        <h2><%= pluralize(@user.errors.count, "error") %> prevented this user from saving</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.text_field :first_name %><br>
+    <%= f.text_field :last_name %><br>
+    <%= f.email_field :email %><br>
+    <%= f.password_field :password %><br>
+    <div class="submit"><%= f.form_group do %></div>
+      <%= f.submit "Create Account", class: "btn btn-info"%>
+    <% end %>
   <% end %>
-  <%= f.text_field :first_name %><br>
-  <%= f.text_field :last_name %><br>
-  <%= f.email_field :email %><br>
-  <%= f.password_field :password %><br>
-  <%= f.form_group do %>
-    <%= f.submit "Create Account", class: "btn btn-info"%>
-  <% end %>
-<% end %>
+</div>
