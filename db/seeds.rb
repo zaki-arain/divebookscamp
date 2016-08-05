@@ -41,11 +41,46 @@ Group.create(name: "Vacation")
 Schedule.create(start_date: "2016-08-04")
 
 
-seed_file = File.join(Rails.root, 'db', 'data.yml')
-config = YAML::load_file(seed_file)
-Task.create(config["tasks"])
+Group.all.map do |group|
+  Day.all.first(5).map do |day|
+    Task.create!(
+    day_id: day.id,
+    group_id: group.id,
+    theme: Faker::Hacker.noun,
+    activity: Faker::Hacker.verb,
+    )
+  end
+end
+
+Group.all.map do |group|
+  Day.all.offset(5).first(5).map do |day|
+    Task.create!(
+    day_id: day.id,
+    group_id: group.id,
+    theme: Faker::Hacker.noun,
+    activity: Faker::Hacker.verb,
+    )
+  end
+end
+
+Group.all.map do |group|
+  Day.all.offset(10).first(5).map do |day|
+    Task.create!(
+    day_id: day.id,
+    group_id: group.id,
+    theme: Faker::Hacker.noun,
+    activity: Faker::Hacker.verb,
+    )
+  end
+end
 
 
+
+# seed_file = File.join(Rails.root, 'db', 'data.yml')
+# config = YAML::load_file(seed_file)
+# Task.create(config["tasks"])
+
+#
 # # Task.all.each do |task|
 #   User.all.each do |user|
 #     15.times do
