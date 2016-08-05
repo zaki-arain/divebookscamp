@@ -18,6 +18,7 @@ Task.destroy_all
       password: "password"
     )
 end
+User.create(first_name: "Adam", last_name: "Baxter", email: "adam@divebookscamp.com", password: "1234")
 
 3.times do
     Day.create(name: "Monday")
@@ -37,8 +38,30 @@ Group.create(name: "Vacation")
 Schedule.create(start_date: "2016-08-04")
 
 
-Day.all.map do |day|
-  Group.all.map do |group|
+Group.all.map do |group|
+  Day.all.first(5).map do |day|
+    Task.create!(
+    day_id: day.id,
+    group_id: group.id,
+    theme: Faker::Hacker.noun,
+    activity: Faker::Hacker.verb,
+    )
+  end
+end
+
+Group.all.map do |group|
+  Day.all.offset(5).first(5).map do |day|
+    Task.create!(
+    day_id: day.id,
+    group_id: group.id,
+    theme: Faker::Hacker.noun,
+    activity: Faker::Hacker.verb,
+    )
+  end
+end
+
+Group.all.map do |group|
+  Day.all.offset(10).first(5).map do |day|
     Task.create!(
     day_id: day.id,
     group_id: group.id,
