@@ -15,7 +15,12 @@
  *= require rails_bootstrap_forms
  */
 
+html, body {
+	font-family: 'Raleway', sans-serif;
+}
+
 h1 {
+	padding-top: 20px;
 	text-align: center;
 	margin-bottom: 70px;
 }
@@ -24,13 +29,13 @@ nav {
 	text-align: right;
 	margin-right: 40px;
 	padding: 15px;
-	margin-bottom: 30px;
 }
 
 .container {
 	margin: 0 auto;
-  background-color: gray;
+  background-color: #E1EAED;
   margin-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 .tab-links {
@@ -39,8 +44,9 @@ nav {
 }
 
 .tab-content {
+	box-shadow: 5px 5px 5px grey;
 	margin-top: 0px;
-	padding-bottom: 0px;
+	padding-bottom: 2px;
 }
 
 img {
@@ -49,12 +55,22 @@ img {
 }
 
 div.sidebar {
-	margin-top: 94px;
+	margin: 94px 0px 0px 0px;
 	background-color: white;
 	border-radius: 4px;
+	box-shadow: 5px 5px 5px grey;
 	padding: 15px 0px 0px 0px;
-	height: 357px;
+	height: 376px;
+}
 
+.register-form {
+	margin-right: 25px;
+}
+
+.submit {
+	text-align: right;
+	margin-top: 50px;
+	margin-right: 15px;
 }
 
 ul {
