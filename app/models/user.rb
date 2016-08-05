@@ -10,7 +10,10 @@ class User < ApplicationRecord
                   message: "must be a valid Dive Books Camp account" }
 	validates_uniqueness_of :email
 
-	def selections(schedule_id)
-	  self.selections.where(schedule_id: @schedule.id)
+	def ordered_choices(schedule)
+	  user_selections = self.selections.where(schedule_id: schedule.id)
+		ordered_selections = user_selections.map {|sel| sel}.sort {|a, b| a.day.id <=> b.day.id}
+		return ordered_selections
 	end
+	
 end

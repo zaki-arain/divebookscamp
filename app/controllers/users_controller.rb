@@ -4,8 +4,6 @@ before_filter :require_login, :except => [:new, :create]
   def show
     @user = User.find(params[:id])
     @schedule = Schedule.last
-    user_selections = @user.selections.where(schedule_id: @schedule.id)
-    @ordered_selections = user_selections.map {|sel| sel}.sort {|a, b| a.day.id <=> b.day.id}
     @week = Day.all.limit(5)
   end
 

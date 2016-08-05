@@ -12,7 +12,7 @@
 
     <tr>
       <th>Week 1</th>
-      <% @ordered_selections[0..4].each do | selection|%>
+      <% @user.ordered_choices(@schedule)[0..4].each do | selection|%>
       <td>
         <%= selection.group.name %>
       </td>
@@ -21,7 +21,7 @@
 
     <tr>
       <th>Week 2</th>
-      <% @ordered_selections[5..9].each do | selection|%>
+      <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
       <td>
         <%= selection.group.name %>
       </td>
@@ -30,7 +30,7 @@
 
     <tr>
       <th>Week 3</th>
-      <% @ordered_selections[10..14].each do | selection|%>
+      <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
       <td>
         <%= selection.group.name %>
       </td>

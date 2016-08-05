@@ -71,8 +71,8 @@ Group.all.map do |group|
   end
 end
 
-User.all.each do |user|
-  Task.all.each do |task|
+Task.all.each do |task|
+  User.all.each do |user|
   15.times do
       Selection.create(
         schedule_id: 1,
