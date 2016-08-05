@@ -1,15 +1,9 @@
 <!-- login page -->
 <h1>Login to your account</h1>
-<%= form_for :session, url: sessions_path do |f| %>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.submit 'Log in!' %>
-  </p>
+<%= bootstrap_form_for( :session, url: sessions_path, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%= f.email_field :email %><br>
+  <%= f.password_field :password %><br>
+  <%= f.form_group do %>
+    <%= f.submit "log in", class: "btn btn-info"%>
+  <% end %>
 <% end %>
