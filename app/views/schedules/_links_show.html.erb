@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <% schedule.drafters.each do |drafter| %>
+    <% schedule.drafters.order(:id).each do |drafter| %>
       <li><%= drafter.user.first_name %></li>
     <% end %>
   </ul>
