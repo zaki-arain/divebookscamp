@@ -44,7 +44,7 @@ skip_before_action :verify_authenticity_token, :only => [:new]
 
   def draft
     @schedule = Schedule.find(params[:schedule_id])
-    if @schedule.drafters[0].user_id == current_user.id
+    if @schedule.drafters[0] && @schedule.drafters[0].user_id == current_user.id
       p "current drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
       render 'schedules/edit'
 

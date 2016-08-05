@@ -15,6 +15,10 @@
         <li class="btn btn-default"> <%= link_to_if(current_user, "Profile", current_user) do
          end%></li>
          <li class="btn btn-default"> <%= link_to_if(current_user, "Create Draft", select_draft_path) do end%></li>
+         <% @schedule = Schedule.last %>
+         <li class="btn btn-default"><%= link_to_if(current_user, "Join Draft", new_draft_path(@schedule.id)) do end %></li>
+         <li class="btn btn-default"><%= link_to_if(current_user, "Home", schedule_path(@schedule)) do end %></li>
+
       </ul>
     </nav>
 
