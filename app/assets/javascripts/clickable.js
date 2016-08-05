@@ -10,7 +10,6 @@ $(document).ready(function() {
     }).done(function(response) {
       $(".links-partial").html('')
       $(".links-partial").append(response)
-      console.log(response)
     })
   })
 });
