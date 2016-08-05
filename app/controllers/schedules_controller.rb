@@ -51,7 +51,6 @@ skip_before_action :verify_authenticity_token, :only => [:new]
   def draft
     @schedule = Schedule.find(params[:schedule_id])
     current_drafter = @schedule.drafters.order(:id).first
-    p "------ in draft route---"
     p current_drafter
     if current_drafter.user_id == current_user.id
       render 'schedules/edit'
