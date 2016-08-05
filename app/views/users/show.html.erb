@@ -1,1 +1,56 @@
-Hi <%= @user.first_name %>
+<h2 class="section-title"><%= @user.first_name %> <%= @user.last_name%> </h2>
+
+<div id="current-session-user-schedule">
+  <h3>Current Session</h3>
+    <table class="table table-bordered" >
+      <thead class="thead-inverse">
+        <tr>
+          <th colspan="1"></th>
+        <% @week.each do |day| %>
+          <th><%= day.name %></th>
+        <% end  %>
+      </tr>
+
+      <tr>
+        <th scope="row">Week 1</th>
+        <% @user.ordered_choices(@schedule)[0..4].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
+
+      <tr>
+        <th scope="row">Week 2</th>
+        <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
+
+      <tr>
+        <th scope="row">Week 3</th>
+        <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="user-percentages-list">
+  Time spent this session:
+  <ul>
+    <li>Group 1: <%= @user.percent_time_in(@schedule, 1) %> %</li>
+    <li>Group 2: <%= @user.percent_time_in(@schedule, 2) %> %</li>
+    <li>Group 3: <%= @user.percent_time_in(@schedule, 3) %> %</li>
+    <li>Running: <%= @user.percent_time_in(@schedule, 4) %> %</li>
+    <li>Maintenance: <%= @user.percent_time_in(@schedule, 5) %> %</li>
+    <li>Off: <%= @user.percent_time_in(@schedule, 6) %> %</li>
+  </ul>
+  Total Off Days: <%= @user.total_days_off %>
+
+</div>

@@ -1,7 +1,9 @@
 <h1>INSTRUCTOR SCHEDULE - STARTING: <%= @schedule.start_date %></h1>
-<h1>LINKS--------------------</h1><br>
 <h3>Draft Order</h3>
 
 <div class="links-partial">
+<script type="text/javascript">
+  refresh_page
+</script>
   <%= render partial: "no_links_show", locals: {schedule: @schedule}, layout: false %>
 </div>
