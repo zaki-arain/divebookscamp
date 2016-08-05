@@ -51,7 +51,7 @@ skip_before_action :verify_authenticity_token, :only => [:new]
     else
       p "NONOTNOTNOTNOTTNOcurrent drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
 
-      render 'schedules/_no_links_show'
+      render 'schedules/edit_no_links'
     end
   end
 
