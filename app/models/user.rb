@@ -15,5 +15,17 @@ class User < ApplicationRecord
 		ordered_selections = user_selections.map {|sel| sel}.sort {|a, b| a.day.id <=> b.day.id}
 		return ordered_selections
 	end
-	
+
+	def percent_time_in(schedule, group_id)
+		user_selections = self.selections.where(schedule_id: schedule.id)
+		occurences_of_group_selections = user_selections.select { |selection| selection.group.id == group_id}
+		return (occurences_of_group_selections.count / 15.0 * 100).round(1)
+	end
+
+	def total_days_off
+		user_selections = self.selections
+		days_off = user_selections.select {|selection| selection.group.id == 6}
+		return days_off.count
+	end
+
 end

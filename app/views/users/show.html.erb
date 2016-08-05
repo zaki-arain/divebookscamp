@@ -41,9 +41,15 @@
 </div>
 
 <div id="user-percentages-list">
-  <ul>Time spent:
-    <li>%--- in Group 1</li>
-    <li>%--- in Group 2</li>
-    <li>%--- in Group 3</li>
+  Time spent this session:
+  <ul>
+    <li>Group 1: <%= @user.percent_time_in(@schedule, 1) %> %</li>
+    <li>Group 2: <%= @user.percent_time_in(@schedule, 2) %> %</li>
+    <li>Group 3: <%= @user.percent_time_in(@schedule, 3) %> %</li>
+    <li>Running: <%= @user.percent_time_in(@schedule, 4) %> %</li>
+    <li>Maintenance: <%= @user.percent_time_in(@schedule, 5) %> %</li>
+    <li>Off: <%= @user.percent_time_in(@schedule, 6) %> %</li>
   </ul>
+  Total Off Days: <%= @user.total_days_off %>
+
 </div>
