@@ -22,20 +22,24 @@
 
       <tr>
         <th scope="row">Week 2</th>
-        <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
-        <td>
-          <%= selection.group.name %>
-        </td>
+        <% if @user.ordered_choices(@schedule).length > 5 %>
+         <% @user.ordered_choices(@schedule)[5..9].each do | selection| %>
+          <td>
+            <%= selection.group.name %>
+          </td>
           <% end %>
+        <% end %>
       </tr>
 
       <tr>
         <th scope="row">Week 3</th>
-        <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
-        <td>
-          <%= selection.group.name %>
-        </td>
+        <% if @user.ordered_choices(@schedule).length > 10 %>
+          <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
+          <td>
+            <%= selection.group.name %>
+          </td>
           <% end %>
+        <% end %>
       </tr>
     </tbody>
   </table>
