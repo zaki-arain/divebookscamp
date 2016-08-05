@@ -30,14 +30,23 @@ skip_before_action :verify_authenticity_token, :only => [:new]
   end
 
   def edit
+    @schedule = Schedule.find(params[:schedule_id])
+    @selection = Selection.create!(user_id: session[:user_id], schedule_id: @schedule.id, task_id: params[:id_to_update])
+    @schedule = Schedule.find(params[:schedule_id])
 
+    p "----- in edit"
+    if request.xhr?
+      render 'schedules/_links_show', layout: false, locals: {schedule: @schedule}
+    else
+      "booo"
+    end
   end
 
   def draft
     @schedule = Schedule.find(params[:schedule_id])
     if @schedule.drafters[0].user_id == current_user.id
       p "current drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
-      render 'schedules/_links_show'
+      render 'schedules/edit'
 
     else
       p "NONOTNOTNOTNOTTNOcurrent drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
