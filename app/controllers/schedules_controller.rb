@@ -33,10 +33,13 @@ skip_before_action :verify_authenticity_token, :only => [:new]
     @schedule = Schedule.find(params[:schedule_id])
     @selection = Selection.create!(user_id: session[:user_id], schedule_id: @schedule.id, task_id: params[:id_to_update])
     @schedule = Schedule.find(params[:schedule_id])
+    current_drafter = @schedule.drafters[0]
 
     p "----- in edit"
     if request.xhr?
-      render 'schedules/_links_show', layout: false, locals: {schedule: @schedule}
+      Drafter.create(user_id: current_drafter.user.id, schedule_id: @schedule.id)
+      current_drafter.destroy
+      render 'schedules/_no_links_show', layout: false, locals: {schedule: @schedule}
     else
       "booo"
     end
@@ -44,8 +47,13 @@ skip_before_action :verify_authenticity_token, :only => [:new]
 
   def draft
     @schedule = Schedule.find(params[:schedule_id])
-    if @schedule.drafters[0].user_id == current_user.id
+    current_drafter = @schedule.drafters[0]
+    p "------ in draft route---"
+    p current_drafter
+    if current_drafter.user_id == current_user.id
       p "current drafter -=-=-=-=-=0-=0-=0=-0=-=--=0=0"
+      Drafter.create(user_id: current_drafter.user.id, schedule_id: @schedule.id)
+      current_drafter.destroy
       render 'schedules/edit'
 
     else
