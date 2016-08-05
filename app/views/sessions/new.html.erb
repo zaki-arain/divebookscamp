@@ -3,7 +3,7 @@
 <%= bootstrap_form_for( :session, url: sessions_path, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
   <%= f.email_field :email %><br>
   <%= f.password_field :password %><br>
-  <%= f.form_group do %>
+  <div class="submit"><%= f.form_group do %></div>
     <%= f.submit "log in", class: "btn btn-info"%>
   <% end %>
 <% end %>
