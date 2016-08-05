@@ -22,3 +22,7 @@ body {
 ul {
   list-style: none;
 }
+
+.clickable:hover {
+  background-color: white;
+}
