@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '~> 1.6.5'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -25,6 +26,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+source 'https://rails-assets.org' do 
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
