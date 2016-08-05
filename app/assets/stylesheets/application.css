@@ -14,10 +14,45 @@
  *= require_self
  */
 
-body {
-  background-color: cyan;
+h1 {
+	text-align: center;
+	margin-bottom: 70px;
 }
 
+nav {
+	text-align: right;
+	margin-right: 40px;
+	padding: 15px;
+	margin-bottom: 30px;
+}
+
+.container {
+	margin: 0 auto;
+  background-color: gray;
+  margin-bottom: 100px;
+}
+
+.tab-links {
+	padding: 25px;
+	margin-bottom: 1px;
+}
+
+.tab-content {
+	margin-top: 0px;
+	padding-bottom: 0px;
+}
+
+img {
+	height: 35px;
+	width: 35px;
+	border-bottom: 1px solid gray;
+	
+}
+
+div.sidebar {
+	background-color: white;
+	padding: 5px;
+}
 
 ul {
   list-style: none;
