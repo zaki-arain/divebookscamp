@@ -71,10 +71,22 @@ Group.all.map do |group|
   end
 end
 
-25.times do
-    Selection.create(
-      schedule_id: Schedule.first.id,
-      user_id: User.all.shuffle[0].id,
-      task_id: Task.all.shuffle[0].id
-    )
-end
+# Task.all.each do |task|
+  User.all.each do |user|
+    15.times do
+      Selection.create(
+        schedule_id: 1,
+        user_id: user.id,
+        task_id: Task.all.shuffle[0].id
+      )
+    end
+  end
+# end
+
+# 25.times do
+#     Selection.create(
+#       schedule_id: Schedule.first.id,
+#       user_id: User.all.shuffle[0].id,
+#       task_id: Task.all.shuffle[0].id
+#     )
+# end
