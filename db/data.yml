@@ -1,0 +1,405 @@
+tasks:
+  - day_id       : 1
+    group_id     : 1
+    theme        : Introductions and Basic Breathing Techniques
+    activity   : Icebreakers (am), camp rules (pm)
+
+  - day_id       : 1
+    group_id     : 2
+    theme        : Intro to Diving Tank Transfer Protocol
+    activity   : Diving Deeper - peacetime treaty violations 101
+
+  - day_id       : 1
+    group_id     : 3
+    theme        : From Zissou to Channels
+    activity   : Channelsy talks
+
+  - day_id       : 1
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 1
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 1
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 2
+    group_id     : 1
+    theme        : Safety Testing and Tide Looping Techniques
+    activity   : Diving Deeper - feedback between shipmates
+
+  - day_id       : 2
+    group_id     : 2
+    theme        : Active Charcoal and Zissou
+    activity   : Diving Deeper - aggression in international waters
+
+  - day_id       : 2
+    group_id     : 3
+    theme        : Testing with Coypu
+    activity   : Channelsy talks
+
+  - day_id       : 2
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 2
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 2
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 3
+    group_id     : 1
+    theme        : Isolation and Recompression
+    activity   : Recompression workshop
+
+  - day_id       : 3
+    group_id     : 2
+    theme        : CPR and SCBA
+    activity   : SCBA demo and/or Q&A
+
+  - day_id       : 3
+    group_id     : 3
+    theme        : Captain's Mission Day 1
+    activity   : Channelsy talks
+
+  - day_id       : 3
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 3
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 3
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 4
+    group_id     : 1
+    theme        : Nested Vessel Structures and the Equipment Heap
+    activity   : n/a
+
+  - day_id       : 4
+    group_id     : 2
+    theme        : Tourists and ID Validation
+    activity   : n/a
+
+  - day_id       : 4
+    group_id     : 3
+    theme        : Captain's Mission Day 2
+    activity   : Channelsy talks
+
+  - day_id       : 4
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 4
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 4
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 5
+    group_id     : 1
+    theme        : Group Activity - Battleship Solver
+    activity   : Diving Deeper - working with "still waters" and "whitecaps"
+
+  - day_id       : 5
+    group_id     : 2
+    theme        : Group Activity - Zissou Diving Quiz Cards
+    activity   : n/a
+
+  - day_id       : 5
+    group_id     : 3
+    theme        : Captain's Mission Day 3
+    activity   : Channelsy talks
+
+  - day_id       : 5
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 5
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 5
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 6
+    group_id     : 1
+    theme        : Intro to Surface Oriented Diving (SOD)
+    activity   : n/a
+
+  - day_id       : 6
+    group_id     : 2
+    theme        : HIRA, CCR, and J-cylinders
+    activity   : n/a
+
+  - day_id       : 6
+    group_id     : 3
+    theme        : Advanced Jump Jacketing - Buoyancy Level 256
+    activity   : Gaugey talks
+
+  - day_id       : 6
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 6
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 6
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 7
+    group_id     : 1
+    theme        : Parsing CAS, Ingassing and Compensation
+    activity   : Diving Deeper - Addressing our Inner Ahab
+
+  - day_id       : 7
+    group_id     : 2
+    theme        : ADAS
+    activity   : Diving Deeper - Pressurized Conversations
+
+  - day_id       : 7
+    group_id     : 3
+    theme        : Advanced Jump Jacketing - Harness testing
+    activity   : Gaugey talks
+
+  - day_id       : 7
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 7
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 7
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 8
+    group_id     : 1
+    theme        : Solo Dive Challenge and Barnacle Scraping
+    activity   : n/a
+
+  - day_id       : 8
+    group_id     : 2
+    theme        : Submarine Overflow Day 1
+    activity   : n/a
+
+  - day_id       : 8
+    group_id     : 3
+    theme        : Lil' Tugboater
+    activity   : Gaugey talks
+
+  - day_id       : 8
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 8
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 8
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 9
+    group_id     : 1
+    theme        : NetH20P, more SOD, and Todos
+    activity   : Roll, Yaw, and Pitch Day (all camp)
+
+  - day_id       : 9
+    group_id     : 2
+    theme        : Submarine Overflow Day 2
+    activity   : Roll, Yaw, and Pitch Day (all camp)
+
+  - day_id       : 9
+    group_id     : 3
+    theme        : Eight Day Tour Kickoff day
+    activity   : Roll, Yaw, and Pitch Day (all camp)
+
+  - day_id       : 9
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 9
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 9
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 10
+    group_id     : 1
+    theme        : Group Activity - Diving Quiz Cards
+    activity   : Diving Deeper - Pre-Dive Anxiety
+
+  - day_id       : 10
+    group_id     : 2
+    theme        : ADAS Self Assessment / Jump Jacket Racer
+    activity   : Diving Deeper - Pre-Dive Anxiety
+
+  - day_id       : 10
+    group_id     : 3
+    theme        : Eight Day Tour
+    activity   : n/a
+
+  - day_id       : 10
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 10
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 10
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 11
+    group_id     : 1
+    theme        : SPM and manifold design
+    activity   : n/a
+
+  - day_id       : 11
+    group_id     : 2
+    theme        : Bathysphere constructors and prototypes
+    activity   : n/a
+
+  - day_id       : 11
+    group_id     : 3
+    theme        : Eight Day Tour
+    activity   : n/a
+
+  - day_id       : 11
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 11
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 11
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 12
+    group_id     : 1
+    theme        : SPM and VLCC
+    activity   : Diving Deeper - Waterlines
+
+  - day_id       : 12
+    group_id     : 2
+    theme        : Suit Up! Practice and Review Day
+    activity   : Demos and splash-ins as needed
+
+  - day_id       : 12
+    group_id     : 3
+    theme        : Eight Day Tour
+    activity   : n/a
+
+  - day_id       : 12
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 12
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 12
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 13
+    group_id     : 1
+    theme        : Single Suit Diving Assessment, Intro to Active Charcoal
+    activity   : Active charcoal breakout
+
+  - day_id       : 13
+    group_id     : 2
+    theme        : Zissou / Jump Jacket / ADAS Diving Assessment
+    activity   : n/a
+
+  - day_id       : 13
+    group_id     : 3
+    theme        : Eight Day Tour
+    activity   : n/a
+
+  - day_id       : 13
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 13
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 13
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 14
+    group_id     : 1
+    theme        : Active Charcoal
+    activity   : n/a
+
+  - day_id       : 14
+    group_id     : 2
+    theme        : Assessment Review and Solo Deep Dive Day 1
+    activity   : n/a
+
+  - day_id       : 14
+    group_id     : 3
+    theme        : Eight Day Tour
+    activity   : n/a
+
+  - day_id       : 14
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 14
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 14
+    group_id     : 6
+    theme        : off day
+
+  - day_id       : 15
+    group_id     : 1
+    theme        : Group Activity - Active Charcoal Task Manager
+    activity   : Group 3 Set Sail Celebration (all camp)
+
+  - day_id       : 15
+    group_id     : 2
+    theme        : Solo Deep Dive Day 2
+    activity   : Group 3 Set Sail Celebration (all camp)
+
+  - day_id       : 15
+    group_id     : 3
+    theme        : Eight Day Tour Treasure Demos
+    activity   : Group 3 Set Sail Celebration (all camp)
+
+  - day_id       : 15
+    group_id     : 4
+    theme        : Runner
+
+  - day_id       : 15
+    group_id     : 5
+    theme        : Maintenance
+
+  - day_id       : 15
+    group_id     : 6
+    theme        : off day
