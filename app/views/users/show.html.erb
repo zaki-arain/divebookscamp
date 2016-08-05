@@ -1,7 +1,7 @@
 <h2 class="section-title"><%= @user.first_name %> <%= @user.last_name%> </h2>
 
-  <div id="current-session-user-schedule">
-    <h3>Current Session</h3>
+<div id="current-session-user-schedule">
+  <h3>Current Session:</h3>
     <table class="table table-bordered" >
       <thead class="thead-inverse">
         <tr>
@@ -22,35 +22,55 @@
 
       <tr>
         <th scope="row">Week 2</th>
-        <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
-        <td>
-          <%= selection.group.name %>
-        </td>
+        <% if @user.ordered_choices(@schedule).length > 5 %>
+         <% @user.ordered_choices(@schedule)[5..9].each do | selection| %>
+          <td>
+            <%= selection.group.name %>
+          </td>
           <% end %>
+        <% end %>
       </tr>
 
       <tr>
         <th scope="row">Week 3</th>
-        <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
-        <td>
-          <%= selection.group.name %>
-        </td>
+        <% if @user.ordered_choices(@schedule).length > 10 %>
+          <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
+          <td>
+            <%= selection.group.name %>
+          </td>
           <% end %>
+        <% end %>
       </tr>
     </tbody>
   </table>
   </div>
 
 <div id="user-percentages-list">
-  Time spent this session:
-  <ul>
-    <li>Group 1: <%= @user.percent_time_in(@schedule, 1) %> %</li>
-    <li>Group 2: <%= @user.percent_time_in(@schedule, 2) %> %</li>
-    <li>Group 3: <%= @user.percent_time_in(@schedule, 3) %> %</li>
-    <li>Running: <%= @user.percent_time_in(@schedule, 4) %> %</li>
-    <li>Maintenance: <%= @user.percent_time_in(@schedule, 5) %> %</li>
-    <li>Off: <%= @user.percent_time_in(@schedule, 6) %> %</li>
-  </ul>
-  Total Off Days: <%= @user.total_days_off %>
+  <h3>Time spent this session:</h3>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Group 1</th>
+        <th>Group 2</th>
+        <th>Group 3</th>
+        <th>Running</th>
+        <th>Maintenance</th>
+        <th>Off</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @user.percent_time_in(@schedule, 1) %>%</td>
+      <td><%= @user.percent_time_in(@schedule, 2) %>%</td>
+      <td><%= @user.percent_time_in(@schedule, 3) %>%</td>
+      <td><%= @user.percent_time_in(@schedule, 4) %>%</td>
+      <td><%= @user.percent_time_in(@schedule, 5) %> %</td>
+      <td><%= @user.percent_time_in(@schedule, 6) %> %</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Total Off Days: <%= @user.total_days_off %></h3>
 
 </div>
