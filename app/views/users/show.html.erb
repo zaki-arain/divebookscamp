@@ -1,35 +1,49 @@
 <h2 class="section-title"><%= @user.first_name %> <%= @user.last_name%> </h2>
 
 <div id="current-session-user-schedule">
-
-  <div id="week-1-user-schedule">
-    <table id="week-1">Week 1
+  <h3>Current Session</h3>
+    <table>
       <tr>
-      <% @week1.each do |day| %>
-          <th><%= day.name %></th>
+        <th colspan="1"></th>
+      <% @week.each do |day| %>
+        <th><%= day.name %></th>
       <% end  %>
     </tr>
-    <tr>
-      <% @user. %>
-    </tr>
-    </table>
-</div>
 
-<div id="week-1-user-schedule" >
-  <table id="week-2">Week 2
-    <% @week2.each do |day| %>
-      <th><%= day.name %></th>
-    <% end  %>
+    <tr>
+      <th>Week 1</th>
+      <% @ordered_selections[0..4].each do | selection|%>
+      <td>
+        <%= selection.group.name %>
+      </td>
+        <% end %>
+    </tr>
+
+    <tr>
+      <th>Week 2</th>
+      <% @ordered_selections[5..9].each do | selection|%>
+      <td>
+        <%= selection.group.name %>
+      </td>
+        <% end %>
+    </tr>
+
+    <tr>
+      <th>Week 3</th>
+      <% @ordered_selections[10..14].each do | selection|%>
+      <td>
+        <%= selection.group.name %>
+      </td>
+        <% end %>
+    </tr>
   </table>
-</div>
-<div id="week-1-user-schedule">
-  <table id="week-3">Week 3
-    <% @week3.each do |day| %>
-      <th><%= day.name %></th>
-    <% end  %>
-  </table>
+
 </div>
 
 <div id="user-percentages-list">
-  USER %%%
+  <ul>Time spent:
+    <li>%--- in Group 1</li>
+    <li>%--- in Group 2</li>
+    <li>%--- in Group 3</li>
+  </ul>
 </div>

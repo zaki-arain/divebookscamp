@@ -9,4 +9,8 @@ class User < ApplicationRecord
 	validates :email, format: { with: /\b+@divebookscamp\.com\z/,
                   message: "must be a valid Dive Books Camp account" }
 	validates_uniqueness_of :email
+
+	def selections(schedule_id)
+	  self.selections.where(schedule_id: @schedule.id)
+	end
 end
