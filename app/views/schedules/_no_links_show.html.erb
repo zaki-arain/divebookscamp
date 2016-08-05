@@ -4,237 +4,256 @@
   <% end %>
 </ul>
 
-<div id="table-1">
-  <table class="schedule-table">
-    <tr>
-      <th>Week 1</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-    <tr>
-      <td>Group 1</td>
-      <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
+<div class="tabs row">
+  <div class="col-md-10">
+    <ul class="tab-links">
+    <li class="active"><a href="#week-1">Week 1</a></li>
+    <li><a href="#week-2">Week 2</a></li>
+    <li><a href="#week-3">Week 3</a></li>
+  </ul>
+
+  <div class="tab-content" id="week-1" style="display: block">
+    <table class="table table-bordered">
+      <tr>
+        <th>Week 1</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tr>
+        <td>Group 1</td>
+        <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 2</td>
+        <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 3</td>
+        <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Runner</td>
+       <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Maintenance</td>
+       <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Off</td>
+       <% (1..5).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-content" id="week-2" >
+    <table class="table table-bordered">
+      <tr>
+        <th>Week 2</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tr>
+        <td>Group 1</td>
+        <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 2</td>
+        <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 3</td>
+        <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Runner</td>
+       <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Maintenance</td>
+       <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Off</td>
+       <% (6..10).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-content" id="week-3">
+    <table class="table table-bordered">
+      <tr>
+        <th>Week 3</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tr>
+        <td>Group 1</td>
+        <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 2</td>
+        <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Group 3</td>
+        <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Runner</td>
+       <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Maintenance</td>
+       <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
+            <% if selection %>
+              <td><%= selection.user.first_name %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Off</td>
+       <% (11..15).each do |i| %>
+          <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
           <% if selection %>
             <td><%= selection.user.first_name %></td>
           <% else %>
             <td></td>
           <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 2</td>
-      <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 3</td>
-      <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Runner</td>
-     <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Maintenance</td>
-     <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Off</td>
-     <% (1..5).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-  </table>
-</div>
-<div id="table-2">
-  <table class="schedule-table">
-    <tr>
-      <th>Week 2</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-    <tr>
-      <td>Group 1</td>
-      <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 2</td>
-      <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 3</td>
-      <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Runner</td>
-     <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Maintenance</td>
-     <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Off</td>
-     <% (6..10).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-  </table>
-</div>
-<div id="table-3">
-  <table class="schedule-table">
-    <tr>
-      <th>Week 3</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-    <tr>
-      <td>Group 1</td>
-      <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 1, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 2</td>
-      <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 2, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Group 3</td>
-      <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 3, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Runner</td>
-     <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 4, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Maintenance</td>
-     <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 5, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Off</td>
-     <% (11..15).each do |i| %>
-        <% selection = @schedule.find_selection(group_id: 6, day_id: i).first %>
-          <% if selection %>
-            <td><%= selection.user.first_name %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-      <% end %>
-    </tr>
-  </table>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+  <div class="sidebar col-sm-2">
+    <ul>
+      <li><%= image_tag "Dexter.jpg" %> Zaki A</li><br>
+      <li><%= image_tag "Lisa.jpg" %> Adam B </li><br>
+      <li><%= image_tag "Bunny.jpg" %> Max G </li><br>
+      <li><%= image_tag "Karl.jpg" %> Dumitru G</li><br>
+      <li><%= image_tag "Doggy.jpg" %>Doug J </li><br>
+      <li><%= image_tag "Dexter.jpg" %> Inc. </li><br>
+    </ul>
+  </div>
 </div>

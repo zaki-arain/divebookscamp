@@ -2,42 +2,43 @@
 
 <div id="current-session-user-schedule">
   <h3>Current Session</h3>
-    <table>
+    <table class="table table-bordered" >
+      <thead class="thead-inverse">
+        <tr>
+          <th colspan="1"></th>
+        <% @week.each do |day| %>
+          <th><%= day.name %></th>
+        <% end  %>
+      </tr>
+
       <tr>
-        <th colspan="1"></th>
-      <% @week.each do |day| %>
-        <th><%= day.name %></th>
-      <% end  %>
-    </tr>
+        <th scope="row">Week 1</th>
+        <% @user.ordered_choices(@schedule)[0..4].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
 
-    <tr>
-      <th>Week 1</th>
-      <% @user.ordered_choices(@schedule)[0..4].each do | selection|%>
-      <td>
-        <%= selection.group.name %>
-      </td>
-        <% end %>
-    </tr>
+      <tr>
+        <th scope="row">Week 2</th>
+        <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
 
-    <tr>
-      <th>Week 2</th>
-      <% @user.ordered_choices(@schedule)[5..9].each do | selection|%>
-      <td>
-        <%= selection.group.name %>
-      </td>
-        <% end %>
-    </tr>
-
-    <tr>
-      <th>Week 3</th>
-      <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
-      <td>
-        <%= selection.group.name %>
-      </td>
-        <% end %>
-    </tr>
+      <tr>
+        <th scope="row">Week 3</th>
+        <% @user.ordered_choices(@schedule)[10..14].each do | selection|%>
+        <td>
+          <%= selection.group.name %>
+        </td>
+          <% end %>
+      </tr>
+    </tbody>
   </table>
-
 </div>
 
 <div id="user-percentages-list">
